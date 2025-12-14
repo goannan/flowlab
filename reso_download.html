@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Reso - FlowLab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #009688;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-image: url('header.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .download-card {
+            background: var(--card-bg);
+            padding: 40px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .platform-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .platform-name {
+            font-size: 1.25em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #00796b;
+        }
+
+        .btn.disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 50px;
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Download Reso</h1>
+            <p>Select your platform to start your journey</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="download-grid">
+            <!-- Android -->
+            <div class="download-card">
+                <i class="fab fa-android platform-icon"></i>
+                <div class="platform-name">Android</div>
+                <a href="https://play.google.com/store/apps/details?id=com.flowlab.reso" class="btn"
+                    target="_blank">Download</a>
+            </div>
+
+            <!-- iOS -->
+            <div class="download-card">
+                <i class="fab fa-apple platform-icon"></i>
+                <div class="platform-name">iOS</div>
+                <a href="#" class="btn disabled">Coming Soon</a>
+            </div>
+
+            <!-- macOS -->
+            <div class="download-card">
+                <i class="fab fa-apple platform-icon"></i>
+                <div class="platform-name">macOS</div>
+                <!-- TODO: Replace with actual GitHub Release Link -->
+                <a href="https://github.com/goannan/flowlab/releases/download/v1.0.0-macos/reso_app_macos.zip"
+                    class="btn" id="macos-link">Download</a>
+            </div>
+
+            <!-- Windows -->
+            <!-- <div class="download-card">
+                <i class="fab fa-windows platform-icon"></i>
+                <div class="platform-name">Windows</div>
+                <a href="#" class="btn disabled">Coming Soon</a>
+            </div> -->
+        </div>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+</body>
+
+</html>
